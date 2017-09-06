@@ -1,0 +1,40 @@
+page-home {
+    ion-header{
+        .toolbar-background-md {
+            background: #f1f1f1;
+        }
+        .grid{
+            background-color: #f1f1f1;
+            padding-bottom: 0;
+            .bg-white{
+                background-color: #fff;
+            }
+        }
+    }
+    ion-content{
+        ion-list{
+            // margin-top: 19px !important;
+            .item-md{
+                padding-left: 0;
+                .item-inner{
+                    padding-right: 0 !important;
+                }
+                .wrap{
+                    padding-left: 10px;
+                }
+                .col{
+                    p{
+                        color: #000;
+                        font-weight: 500;
+                        overflow: hidden;
+                    }
+                }
+                .color-green{
+                    p{
+                        color: green;
+                    }
+                }
+            }
+        }
+    }
+}
