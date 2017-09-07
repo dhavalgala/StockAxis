@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only>
+        <ion-icon name="md-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Change in Trend</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="ios-home-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <button ion-button menuToggle right>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+  </ion-navbar>
+  <ion-grid>
+    <ion-row style="padding-bottom:3px">
+      <ion-col col-6>Company</ion-col>
+      <ion-col>Price</ion-col>
+      <ion-col>Trend</ion-col>
+      <ion-col>Rating</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center class="bg-white">
+        {{stockDate | date:'MMM dd, yyyy'}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+
+<ion-content>
+  <ion-list [virtualScroll]="stockData" style="margin-top: 19px;">
+    <ion-item *virtualItem="let data">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6 class="wrap">
+            <p>
+              {{ data.COMPNAME }}
+            </p>
+          </ion-col>
+          <ion-col text-right>
+            <p>
+              {{ data.ClosingPrice }}
+            </p>
+          </ion-col>
+          <ion-col text-center>
+            <p [style.color]="data.LongTrend==='UP'?'green':'red'">
+              {{ data.LongTrend }}
+            </p>
+          </ion-col>
+          <ion-col text-center>
+            <p>
+              {{ data.Rating }}
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+</ion-content>
